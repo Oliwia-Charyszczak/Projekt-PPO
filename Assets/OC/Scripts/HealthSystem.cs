@@ -12,6 +12,8 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite emptyHeart;
 
+    private bool isDead = false;
+
     void Update()
     {
         for (int i = 0; i < hearts.Length; i++) 
@@ -34,23 +36,34 @@ public class HealthSystem : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
+
+        if (health <= 0 && !isDead)
+        {
+            HandleDeath();
+        }
     }
 
     public void TakeDamage(int amount)
     {
+        if (isDead) return;
+
         health -= amount;
-        if(health <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 
     public void Heal(int amount)
     {
+        if (isDead) return;
         health += amount;
         if (health > numberOfHearts)
         {
             health = numberOfHearts;
         }
+    }
+
+    private void HandleDeath()
+    {
+        isDead = true;
+        enabled = false;
+        gameObject.SetActive(false);
     }
 }
