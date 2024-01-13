@@ -74,9 +74,9 @@ public class Movement : MonoBehaviour
     {
         if (other.tag == "reCharge")
         {
-            
+            GameObject punkt = other.gameObject;
             Debug.Log("Jeszcze jak");
-            //StartCoroutine(JumpCoroutine(other));
+            StartCoroutine(JumpCoroutine(punkt));
         }
         else if(other.tag == "Speed")
         {
