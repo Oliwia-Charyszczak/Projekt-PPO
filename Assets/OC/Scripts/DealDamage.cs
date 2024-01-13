@@ -6,7 +6,7 @@ public class DealDamage : MonoBehaviour
 {
     public HealthSystem healthSystem;
     public int damage = 1;
-    public float delayBeforeNextDamage = 3f;
+    public float delayBeforeNextDamage = 0.4f;
 
     private bool isPlayerInContact = false;
 

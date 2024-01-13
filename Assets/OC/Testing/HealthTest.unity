@@ -721,7 +721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSystem: {fileID: 1329792039}
   damage: 1
-  delayBeforeNextDamage: 3
+  delayBeforeNextDamage: 0.4
 --- !u!1 &526984249
 GameObject:
   m_ObjectHideFlags: 0

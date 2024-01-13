@@ -82,7 +82,7 @@ public class HealthSystem : MonoBehaviour
 
     private IEnumerator BlinkEffect()
     {
-        float blinkDuration = 1.5f;
+        float blinkDuration = 2f;
         float blinkInterval = 0.1f;
 
         while (blinkDuration > 0f)
