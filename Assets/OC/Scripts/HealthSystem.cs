@@ -16,9 +16,10 @@ public class HealthSystem : MonoBehaviour
     private SpriteRenderer characterSpriteRenderer;
     private Coroutine blinkCoroutine;
 
-    void Start()
+    public SpriteRenderer CharacterSpriteRenderer
     {
-        characterSpriteRenderer = GetComponent<SpriteRenderer>();
+        get { return characterSpriteRenderer; }
+        set { characterSpriteRenderer = value; }
     }
 
     void Update()
