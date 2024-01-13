@@ -12,6 +12,7 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite emptyHeart;
     [SerializeField] private GameObject player;
+    [SerializeField] private int resetHealth;
 
     private bool isDead = false;
     private SpriteRenderer characterSpriteRenderer;
@@ -23,6 +24,10 @@ public class HealthSystem : MonoBehaviour
         set { characterSpriteRenderer = value; }
     }
 
+    void Start()
+    {
+        resetHealth = health;
+    }
     void Update()
     {
         for (int i = 0; i < hearts.Length; i++) 
@@ -48,7 +53,7 @@ public class HealthSystem : MonoBehaviour
 
         if (health <= 0 && !isDead)
         {
-            HandleDeath();
+            ResetHealth();
         }
     }
 
@@ -75,12 +80,6 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
-    private void HandleDeath()
-    {
-        isDead = true;
-        player.gameObject.SetActive(false);
-    }
-
     private IEnumerator BlinkEffect()
     {
         float blinkDuration = 2f;
@@ -95,5 +94,18 @@ public class HealthSystem : MonoBehaviour
 
         characterSpriteRenderer.enabled = true;
         blinkCoroutine = null;
+    }
+    public bool IsDead
+    {
+        get { return isDead; }
+        set { isDead = value; }
+    }
+    public void ResetHealth()
+    {
+            isDead = true;
+            player.SetActive(false);
+            health = resetHealth;
+
+
     }
 }

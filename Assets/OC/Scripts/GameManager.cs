@@ -4,13 +4,28 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    GameObject player;
     public HealthSystem healthSystem;
-    public SpriteRenderer playerSpriteRenderer; // Assign the player's sprite renderer in the Inspector
-
+    public SpriteRenderer playerSpriteRenderer; 
+    Vector2 startPos;
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         healthSystem.CharacterSpriteRenderer = playerSpriteRenderer;
+        startPos = player.transform.position;
     }
 
-    // Rest of the GameManager script...
+    void Update()
+    {
+        if (healthSystem != null && healthSystem.IsDead)
+        {
+            player.transform.position = startPos;
+            player.SetActive(true);
+            healthSystem.IsDead = false;
+        }
+    }
+    public void SetSpawnPointActive(Vector2 position)
+    {
+        startPos = position;
+    }
 }
