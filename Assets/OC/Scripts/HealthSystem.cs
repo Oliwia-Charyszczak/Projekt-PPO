@@ -11,6 +11,7 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] private Image[] hearts;
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite emptyHeart;
+    [SerializeField] private GameObject player;
 
     private bool isDead = false;
     private SpriteRenderer characterSpriteRenderer;
@@ -53,7 +54,7 @@ public class HealthSystem : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (blinkCoroutine != null) return;
+        if (blinkCoroutine != null || isDead) return;
 
         health -= amount;
 
@@ -77,8 +78,7 @@ public class HealthSystem : MonoBehaviour
     private void HandleDeath()
     {
         isDead = true;
-        enabled = false;
-        gameObject.SetActive(false);
+        player.gameObject.SetActive(false);
     }
 
     private IEnumerator BlinkEffect()

@@ -2102,6 +2102,7 @@ MonoBehaviour:
   - {fileID: 596709431}
   fullHeart: {fileID: 21300000, guid: fed24bd82cefc0c4a8ef64dab6231b53, type: 3}
   emptyHeart: {fileID: 21300002, guid: fed24bd82cefc0c4a8ef64dab6231b53, type: 3}
+  player: {fileID: 1396863339}
 --- !u!4 &1613252650
 Transform:
   m_ObjectHideFlags: 0
