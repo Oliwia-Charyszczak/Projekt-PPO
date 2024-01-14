@@ -15,7 +15,6 @@ public class Movement : MonoBehaviour
     [SerializeField] private bool isSliding = false;
     [SerializeField] private float moveSpeed = 7f;       // #SPEED
     [SerializeField] private float jumpForce = 7f;       // NBA?
-    [SerializeField] private float bonus = 20f;          // O ile przyspieszyc na 5 s
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -39,7 +38,6 @@ public class Movement : MonoBehaviour
         if ((IsOnWallRight() || IsOnWallLeft()) && Input.GetButtonDown("Jump"))
         {
             isSliding = true;
-            Debug.Log("jebac disa");
             float wallDirection = IsOnWallRight() ? -1f : 1f;
             rb.velocity = new Vector2(moveSpeed, jumpForce);
         }
@@ -47,7 +45,6 @@ public class Movement : MonoBehaviour
         else if (IsOnWallRight() || IsOnWallLeft())
         {
             isSliding = true;
-            Debug.Log("jebac disa");
             float wallDirection = IsOnWallRight() ? -1f : 1f;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, - wallSlideSpeed));
         }
@@ -70,21 +67,9 @@ public class Movement : MonoBehaviour
         {
             return Physics2D.BoxCast(collide.bounds.center, collide.bounds.size, 0f, Vector2.right, .1f, jumpableWall);
         }
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "Speed")
-        {
-            Debug.Log("kachow");
-            Destroy(other.gameObject);
-            StartCoroutine(SpeedCoroutine());
-        }
-        
-    }
-    IEnumerator SpeedCoroutine()
+    public void AddSpeed(float bonus)
     {
         moveSpeed += bonus;
-        yield return new WaitForSeconds(5);
-        moveSpeed -= bonus;
     }
     public void AddJump()
     {
