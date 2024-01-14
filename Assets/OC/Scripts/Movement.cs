@@ -72,13 +72,7 @@ public class Movement : MonoBehaviour
         }
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "reCharge")
-        {
-            GameObject punkt = other.gameObject;
-            Debug.Log("Jeszcze jak");
-            StartCoroutine(JumpCoroutine(punkt));
-        }
-        else if(other.tag == "Speed")
+        if(other.tag == "Speed")
         {
             Debug.Log("kachow");
             Destroy(other.gameObject);
@@ -92,11 +86,10 @@ public class Movement : MonoBehaviour
         yield return new WaitForSeconds(5);
         moveSpeed -= bonus;
     }
-    IEnumerator JumpCoroutine(GameObject other)
+    public void AddJump()
     {
         bonusJump++;
-        other.SetActive(false);
-        yield return new WaitForSeconds(8);
-        other.SetActive(true);
+        Debug.Log("dodano");
+        Debug.Log("bonusJump");
     }
 }
