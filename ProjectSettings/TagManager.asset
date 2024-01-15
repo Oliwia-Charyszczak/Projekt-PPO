@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background visual
+    uniqueID: 4182429637
+    locked: 0
+  - name: background
+    uniqueID: 2619177273
+    locked: 0
+  - name: non pshical
+    uniqueID: 2597321971
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: pshicals
+    uniqueID: 3510961887
     locked: 0
