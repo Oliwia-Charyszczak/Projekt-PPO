@@ -58,7 +58,7 @@ public class EnemyLogic : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInContactWithPlayer = true;
-            rb.velocity = Vector2.zero; // Zatrzymaj ruch przeciwnika
+            rb.velocity = Vector2.zero;
         }
     }
 
