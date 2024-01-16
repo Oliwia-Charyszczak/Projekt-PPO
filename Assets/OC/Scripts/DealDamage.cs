@@ -17,7 +17,7 @@ public class DealDamage : MonoBehaviour
 
         if (gameManagerObject != null)
         {
-            HealthSystem healthSystem = gameManagerObject.GetComponent<HealthSystem>();
+            healthSystem = gameManagerObject.GetComponent<HealthSystem>();
         }
         else
         {
