@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8369013980300668784}
   - component: {fileID: 8369013980300668798}
   - component: {fileID: 6794430572132455154}
+  - component: {fileID: 1361265179}
   m_Layer: 0
   m_Name: terrain (1)_68
   m_TagString: Untagged
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -881090531
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 197384337, guid: 45b78a3e2395286458683ca8e5126b96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -137,3 +138,18 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &1361265179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369013980300668785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea5acf8be0451c4d94fa1d6dac1a401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSystem: {fileID: 0}
+  damage: 1
+  delayBeforeNextDamage: 0.4

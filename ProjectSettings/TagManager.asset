@@ -55,6 +55,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: smallspike
+    uniqueID: 932353541
+    locked: 0
+  - name: spike
+    uniqueID: 3413876765
+    locked: 0
   - name: phisic
     uniqueID: 3573144497
+    locked: 0
+  - name: SpikeCover
+    uniqueID: 3822250599
     locked: 0
