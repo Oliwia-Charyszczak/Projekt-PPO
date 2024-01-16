@@ -4,17 +4,40 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private Transform player;
     [SerializeField] private float offset;  //Ustawienie kamery w kierunku gracza
-    [SerializeField] private float offsetSmoothing;     //Prêdkosc podazania kamery
+    [SerializeField] private float smoothTime = 0.1f;
+
+    private SpriteRenderer playerSpriteRenderer;
+    private Transform player;
+    private Vector3 velocity = Vector3.zero;
+
+    void Start()
+    {
+        FindPlayer();
+    }
+
+    void FindPlayer()
+    {
+        GameObject playerObject = GameObject.FindWithTag("Player");
+
+        if (playerObject != null)
+        {
+            player = playerObject.transform;
+            playerSpriteRenderer = playerObject.GetComponent<SpriteRenderer>();
+        }
+    }
 
     void Update()
     {
-        if (player != null)
+        if (player != null && playerSpriteRenderer != null)
         {
-            float targetX = player.position.x + (player.localScale.x > 0f ? offset : -offset);  //Sprawdzanie w która strone jest zwrocony gracz
+            float targetX = player.position.x + (playerSpriteRenderer.flipX ? -offset : offset);
             Vector3 targetPosition = new Vector3(targetX, player.position.y, transform.position.z);
-            transform.position = Vector3.Lerp(transform.position, targetPosition, offsetSmoothing * Time.deltaTime);
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+        }
+        else
+        {
+            FindPlayer();
         }
     }
 }

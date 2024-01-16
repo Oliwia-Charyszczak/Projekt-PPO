@@ -7,6 +7,11 @@ public class Movement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private BoxCollider2D collide;
+    private Animator anim;
+    private SpriteRenderer sprite;
+
+    private float dirX;
+    private float wallDirection;
 
     [SerializeField] private LayerMask jumpableGround;    //Powiazane z warstwa Ground
     [SerializeField] private LayerMask jumpableWall;      //Powiazane z warstwa Wall
@@ -15,16 +20,21 @@ public class Movement : MonoBehaviour
     [SerializeField] private bool isSliding = false;
     [SerializeField] private float moveSpeed = 7f;       // #SPEED
     [SerializeField] private float jumpForce = 7f;       // NBA?
+
+    private enum MovementState { idle, walking, jumping, falling, slideRight, slideLeft }
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         collide = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+
     }
 
     private void Update()
     {
-        float dirx = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirx * moveSpeed, rb.velocity.y);
+        dirX = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && (IsOnGround() || bonusJump > 0))
         {
@@ -38,20 +48,21 @@ public class Movement : MonoBehaviour
         if ((IsOnWallRight() || IsOnWallLeft()) && Input.GetButtonDown("Jump"))
         {
             isSliding = true;
-            float wallDirection = IsOnWallRight() ? -1f : 1f;
+            wallDirection = IsOnWallRight() ? -1f : 1f;
             rb.velocity = new Vector2(moveSpeed, jumpForce);
         }
 
         else if (IsOnWallRight() || IsOnWallLeft())
         {
             isSliding = true;
-            float wallDirection = IsOnWallRight() ? -1f : 1f;
+            wallDirection = IsOnWallRight() ? -1f : 1f;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, - wallSlideSpeed));
         }
         else
         {
             isSliding = false;
         }
+        UpdateAnimationState();
     }
 
     private bool IsOnGround()
@@ -76,5 +87,46 @@ public class Movement : MonoBehaviour
         bonusJump++;
         Debug.Log("dodano");
         Debug.Log("bonusJump");
+    }
+
+    private void UpdateAnimationState()
+    {
+        MovementState state;
+
+        if (dirX > 0f)
+        {
+            state = MovementState.walking;
+            sprite.flipX = false;
+        }
+        else if (dirX < 0f)
+        {
+            state = MovementState.walking;
+            sprite.flipX = true;
+        }
+        else
+        {
+            state = MovementState.idle;
+        }
+
+        if (rb.velocity.y > 0.1f)
+        {
+            state = MovementState.jumping;
+        }
+        else if (rb.velocity.y < -0.1f && !isSliding)
+        {
+            state = MovementState.falling;
+        }
+
+        if (isSliding = true && IsOnWallRight())
+        {
+            state = MovementState.slideRight;
+        }
+
+        else if (isSliding = true && IsOnWallLeft())
+        {
+            state = MovementState.slideLeft;
+        }
+
+        anim.SetInteger("AnimState", (int)state);
     }
 }
