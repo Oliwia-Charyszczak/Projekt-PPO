@@ -1,8 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyLogic : MonoBehaviour
+// Interface na si³e w sumie nie potrzbny
+public interface IEnemyAction
+{
+    void PerformAction();
+}
+
+public class EnemyLogic : MonoBehaviour, IEnemyAction
 {
     [SerializeField] private GameObject pointA;
     [SerializeField] private GameObject pointB;
@@ -26,8 +30,13 @@ public class EnemyLogic : MonoBehaviour
     {
         if (!isInContactWithPlayer)
         {
-            MoveLogic();
+            PerformAction();
         }
+    }
+
+    public void PerformAction()
+    {
+        MoveLogic();
     }
 
     private void MoveLogic()

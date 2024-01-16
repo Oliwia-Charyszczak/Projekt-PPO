@@ -108,4 +108,13 @@ public class HealthSystem : MonoBehaviour
 
 
     }
+    public int GetHealth()
+    {
+        return health;
+    }
+
+    public void SetHealth(int newhealth)
+    {
+        health = newhealth;
+    }
 }

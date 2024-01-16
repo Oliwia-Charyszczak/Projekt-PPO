@@ -10,6 +10,21 @@ public class DealDamage : MonoBehaviour
 
     private bool isPlayerInContact = false;
 
+
+    void Start()
+    {
+        GameObject gameManagerObject = GameObject.Find("GameManager");
+
+        if (gameManagerObject != null)
+        {
+            HealthSystem healthSystem = gameManagerObject.GetComponent<HealthSystem>();
+        }
+        else
+        {
+            Debug.LogError("GameManager object not found in the hierarchy.");
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
