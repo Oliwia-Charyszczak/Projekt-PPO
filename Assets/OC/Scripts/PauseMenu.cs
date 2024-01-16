@@ -7,9 +7,16 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel;
 
+    public static bool isGamePaused = false;
+
     private void Start()
     {
         pausePanel.SetActive(false);
+
+        if (isGamePaused)
+        {
+            Continue();
+        }
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -34,6 +41,8 @@ public class PauseMenu : MonoBehaviour
         pausePanel.SetActive(true);
         Time.timeScale = 0;
 
+        isGamePaused = true;
+
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -42,6 +51,8 @@ public class PauseMenu : MonoBehaviour
     {
         pausePanel.SetActive(false);
         Time.timeScale = 1;
+
+        isGamePaused = false;
 
         if (!Input.GetKeyDown(KeyCode.Escape))
         {
@@ -55,6 +66,7 @@ public class PauseMenu : MonoBehaviour
 
     public void GoToMenu()
     {
+
         SceneManager.LoadScene("Menu");
     }
 }

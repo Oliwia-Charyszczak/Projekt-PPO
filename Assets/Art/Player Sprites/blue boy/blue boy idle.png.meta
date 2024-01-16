@@ -110,7 +110,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 70
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dee8d51a0d5e60b42b6d866e8cf79eab
-      internalID: -1281165309
+      spriteID: 0fa63273448a9fb4f9b61bc077558c3a
+      internalID: 646831560
       vertices: []
       indices: 
       edges: []
@@ -129,9 +129,9 @@ TextureImporter:
       name: blue boy idle_1
       rect:
         serializedVersion: 2
-        x: 70
+        x: 30
         y: 0
-        width: 70
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8968ee95a04fe5b4f8bb9eb044c8759f
-      internalID: -1949347835
+      spriteID: 041cc788a0541264ba946451300a74aa
+      internalID: 1416258774
       vertices: []
       indices: 
       edges: []
@@ -150,9 +150,9 @@ TextureImporter:
       name: blue boy idle_2
       rect:
         serializedVersion: 2
-        x: 140
+        x: 60
         y: 0
-        width: 70
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e3fb79bb1faf248ba56983511786ae
-      internalID: -1567805226
+      spriteID: 4c06a54f62b51cd499a5191bbfcb1580
+      internalID: -2127742228
       vertices: []
       indices: 
       edges: []
@@ -171,9 +171,9 @@ TextureImporter:
       name: blue boy idle_3
       rect:
         serializedVersion: 2
-        x: 210
+        x: 90
         y: 0
-        width: 70
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42b0df51a14d9e04ca83ce3b6a3bb138
-      internalID: -594830156
+      spriteID: d1824ff952515874f87d8e2b804741fd
+      internalID: -1786005041
       vertices: []
       indices: 
       edges: []
@@ -192,9 +192,9 @@ TextureImporter:
       name: blue boy idle_4
       rect:
         serializedVersion: 2
-        x: 280
+        x: 120
         y: 0
-        width: 70
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1d915408670c144b8ffcc7b3ff8e1be
-      internalID: 523110026
+      spriteID: 898cc18954a4c3c4b885c8fdc3aa8950
+      internalID: 103627926
       vertices: []
       indices: 
       edges: []
@@ -213,9 +213,9 @@ TextureImporter:
       name: blue boy idle_5
       rect:
         serializedVersion: 2
-        x: 350
+        x: 150
         y: 0
-        width: 70
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -224,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4060ef1ce4533ed4c9e4d2d96649a144
-      internalID: -1774668368
+      spriteID: d8fef5e5f9b9a0d439c6ef451a73ce8f
+      internalID: 380664168
       vertices: []
       indices: 
       edges: []
@@ -234,9 +234,9 @@ TextureImporter:
       name: blue boy idle_6
       rect:
         serializedVersion: 2
-        x: 420
+        x: 180
         y: 0
-        width: 70
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -245,8 +245,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47505ba64132ea64bb4d7ed077a6f9b7
-      internalID: -1727853320
+      spriteID: c372ea9c95a4ee44ca2ac6e281697b3f
+      internalID: 2061685441
       vertices: []
       indices: 
       edges: []
@@ -255,9 +255,9 @@ TextureImporter:
       name: blue boy idle_7
       rect:
         serializedVersion: 2
-        x: 490
+        x: 210
         y: 0
-        width: 70
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -266,92 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da4cd0f20a5b6994990e4f2354cbde8d
-      internalID: 1811108377
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blue boy idle_8
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 0
-        width: 70
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 538c05d9e0e9c3c49b4f63e8b278979f
-      internalID: 1553669033
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blue boy idle_9
-      rect:
-        serializedVersion: 2
-        x: 630
-        y: 0
-        width: 70
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e11173b284500243ba48b0194262789
-      internalID: 1324048384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blue boy idle_10
-      rect:
-        serializedVersion: 2
-        x: 700
-        y: 0
-        width: 70
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa6150bc82002ee49b00f88bffbc6408
-      internalID: 813147904
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blue boy idle_11
-      rect:
-        serializedVersion: 2
-        x: 770
-        y: 0
-        width: 70
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5929535d8f3ef984f93b6b7b76e61b67
-      internalID: -760899803
+      spriteID: 4b9087be4298d964db77cf43530afdba
+      internalID: 2017411884
       vertices: []
       indices: 
       edges: []
@@ -367,18 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      blue boy idle_0: -1281165309
-      blue boy idle_7: 1811108377
-      blue boy idle_3: -594830156
-      blue boy idle_8: 1553669033
-      blue boy idle_6: -1727853320
-      blue boy idle_10: 813147904
-      blue boy idle_2: -1567805226
-      blue boy idle_9: 1324048384
-      blue boy idle_11: -760899803
-      blue boy idle_1: -1949347835
-      blue boy idle_5: -1774668368
-      blue boy idle_4: 523110026
+      blue boy idle_0: 646831560
+      blue boy idle_7: 2017411884
+      blue boy idle_3: -1786005041
+      blue boy idle_6: 2061685441
+      blue boy idle_2: -2127742228
+      blue boy idle_1: 1416258774
+      blue boy idle_5: 380664168
+      blue boy idle_4: 103627926
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

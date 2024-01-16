@@ -7,6 +7,7 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField] private GameObject pointA;
     [SerializeField] private GameObject pointB;
     [SerializeField] private float speed;
+    [SerializeField] private float bounceForce = 3f;
     private Rigidbody2D rb;
     private Transform currentPoint;
     private CapsuleCollider2D collide;
@@ -74,6 +75,12 @@ public class EnemyLogic : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (playerRb != null)
+            {
+                playerRb.velocity = new Vector2(playerRb.velocity.x, bounceForce);
+            }
+
             gameObject.SetActive(false);
         }
     }
