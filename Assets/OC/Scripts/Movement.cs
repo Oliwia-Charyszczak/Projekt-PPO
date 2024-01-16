@@ -33,7 +33,7 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        dirX = Input.GetAxisRaw("Horizontal");
+        dirX = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && (IsOnGround() || bonusJump > 0))
