@@ -56997,7 +56997,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1520902302}
   - component: {fileID: 1520902304}
-  - component: {fileID: 1520902303}
+  - component: {fileID: 1520902306}
+  - component: {fileID: 1520902305}
   m_Layer: 0
   m_Name: BerryEnd
   m_TagString: Untagged
@@ -57020,22 +57021,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &1520902303
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520902301}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0020446777, y: -0.09779167}
-  m_Size: {x: 0.6373596, y: 0.76366997}
-  m_Direction: 0
 --- !u!212 &1520902304
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -57088,6 +57073,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1520902305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520902301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be54eb6bbd0f7b6499bdccd5cd480390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &1520902306
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520902301}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0020446777, y: -0.09779167}
+  m_Size: {x: 0.6373596, y: 0.76366997}
+  m_Direction: 0
 --- !u!1 &1537210768
 GameObject:
   m_ObjectHideFlags: 0
