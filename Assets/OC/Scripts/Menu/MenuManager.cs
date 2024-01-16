@@ -20,6 +20,12 @@ public class MenuManager : MonoBehaviour
         }
 
         SwitchMenuByName(startMenu.MenuName);
+
+        if (Cursor.visible == false)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     void OnDisable()
