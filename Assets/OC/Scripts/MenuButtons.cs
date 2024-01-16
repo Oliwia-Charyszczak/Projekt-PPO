@@ -7,16 +7,35 @@ public class MenuButtons : MonoBehaviour
 {
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject levelSelectPanel;
 
     private void Start()
     {
         if (settingsPanel != null || mainMenuPanel != null)
             settingsPanel.SetActive(false);
+            levelSelectPanel.SetActive(false);
             mainMenuPanel.SetActive(true);
     }
-    public void PlayGame()
+
+    public void LevelOne()
     {
-        SceneManager.LoadScene("UITest");
+        SceneManager.LoadScene("Lv 1");
+    }
+
+    public void LevelTwo()
+    {
+
+    }
+
+    public void LevelThree()
+    {
+
+    }
+
+    public void OpenLevelSelection()
+    {
+        mainMenuPanel.SetActive(false);
+        levelSelectPanel.SetActive(true);
     }
 
     public void OpenSettings()
@@ -28,6 +47,12 @@ public class MenuButtons : MonoBehaviour
     public void CloseSettings()
     {
         settingsPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
+    }
+
+    public void CloseLevelSelection()
+    {
+        levelSelectPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
     }
 
