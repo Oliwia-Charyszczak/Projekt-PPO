@@ -40,6 +40,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: far far background
+    uniqueID: 1979126393
+    locked: 0
+  - name: far background
+    uniqueID: 2913883285
+    locked: 0
+  - name: background
+    uniqueID: 3744676257
+    locked: 0
+  - name: filling
+    uniqueID: 310560301
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: phisic
+    uniqueID: 3573144497
     locked: 0
