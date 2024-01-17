@@ -15,11 +15,11 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private LayerMask jumpableGround;    //Powiazane z warstwa Ground
     [SerializeField] private LayerMask jumpableWall;      //Powiazane z warstwa Wall
-    [SerializeField] private int bonusJump = 0;        // Ile dodatkowych skokow
-    [SerializeField] private float wallSlideSpeed = 200f;  //O ile zwolnic na slidzie
+    [SerializeField] private int bonusJump = 0;        // Ilosc datkowych skokow
+    [SerializeField] private float wallSlideSpeed = 200f;  //O ile zwolnic opadanie na scianie
     [SerializeField] private bool isSliding = false;
-    [SerializeField] private float moveSpeed = 7f;       // #SPEED
-    [SerializeField] private float jumpForce = 7f;       // NBA?
+    [SerializeField] private float moveSpeed = 7f;       // predkosc
+    [SerializeField] private float jumpForce = 7f;       // wysokosc skoku
     [SerializeField] private AudioSource jumpSound;
 
     private enum MovementState { idle, walking, jumping, falling, slideRight, slideLeft }

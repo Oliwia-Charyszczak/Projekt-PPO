@@ -14,7 +14,6 @@ public class FinishLevel : MonoBehaviour
             Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
             SpriteRenderer renderer = GetComponent<SpriteRenderer>();
             renderer.enabled = false;
-            //Instancjonowanie konfetti czy coœ?
             StartCoroutine(LoadOutLevel());
         }
 
