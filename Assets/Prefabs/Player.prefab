@@ -155,7 +155,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   bonusJump: 0
-  wallSlideSpeed: 1
+  wallSlideSpeed: 2
   isSliding: 0
   moveSpeed: 7
   jumpForce: 7
