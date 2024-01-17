@@ -6,9 +6,18 @@ public class Checkpoint : MonoBehaviour
 {
     public GameManager GameManager;
 
-    private void Start()
+    void Start()
     {
-        GameManager = FindObjectOfType<GameManager>();
+        GameObject gameManagerObject = GameObject.Find("GameManager");
+
+        if (gameManagerObject != null)
+        {
+            GameManager = gameManagerObject.GetComponent<GameManager>();
+        }
+        else
+        {
+            Debug.LogError("GameManager object not found in the hierarchy.");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
