@@ -28,13 +28,6 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    void OnDisable()
-    {
-        foreach (var menu in menus)
-            if (menu.MenuBase)
-                menu.MenuBase.ExitMenu();
-    }
-
     MenuBase GetMenuByName(string menuName)
     {
         foreach (var menu in menus)
