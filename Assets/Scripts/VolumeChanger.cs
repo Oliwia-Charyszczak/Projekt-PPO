@@ -25,7 +25,6 @@ public class VolumeChanger : MonoBehaviour
 
     void Start()
     {
-        LoadVolumeData();
         UpdateVolumeVisuals();
     }
 
@@ -71,13 +70,13 @@ public class VolumeChanger : MonoBehaviour
         AudioListener.volume = volume;
 
     }
-    private void SaveVolumeData()
+    public void SaveVolumeData()
     {
         PlayerPrefs.SetFloat("Volume", volume);
         PlayerPrefs.Save();
     }
 
-    private void LoadVolumeData()
+    public void LoadVolumeData()
     {
         if (PlayerPrefs.HasKey("Volume"))
         {

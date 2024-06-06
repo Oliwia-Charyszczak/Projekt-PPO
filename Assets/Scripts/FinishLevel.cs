@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class FinishLevel : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject leafParticlesPrefab;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -14,13 +15,20 @@ public class FinishLevel : MonoBehaviour
             Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
             SpriteRenderer renderer = GetComponent<SpriteRenderer>();
             renderer.enabled = false;
+            ShootLeafParticles();
             StartCoroutine(LoadOutLevel());
         }
 
         IEnumerator LoadOutLevel()
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
             SceneManager.LoadScene("Menu");
+        }
+
+        void ShootLeafParticles()
+        {
+            GameObject leafParticles = Instantiate(leafParticlesPrefab, transform.position, Quaternion.identity);
+            Destroy(leafParticles, 2.5f);
         }
     }
 }

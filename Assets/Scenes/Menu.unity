@@ -4320,6 +4320,7 @@ MonoBehaviour:
     menuBase: {fileID: 757432591}
   - menuName: LevelSelection
     menuBase: {fileID: 211924176}
+  volumeChanger: {fileID: 678067504}
 --- !u!1 &2120945651
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] Menu startMenu;
     [SerializeField] Menu[] menus;
+    [SerializeField] VolumeChanger volumeChanger;
 
     MenuBase currentMenu;
 
@@ -18,6 +19,8 @@ public class MenuManager : MonoBehaviour
                 menu.MenuBase.ExitMenu();
             }
         }
+
+        volumeChanger.LoadVolumeData();
 
         SwitchMenuByName(startMenu.MenuName);
 

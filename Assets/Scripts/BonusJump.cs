@@ -7,29 +7,27 @@ public class BonusJump : MonoBehaviour
     GameObject objectWithScript;
     Movement movement;
 
-    private BoxCollider2D boxCollider;
+    private EdgeCollider2D edgeCollider;
     private Renderer objectRenderer;
 
     private void Start()
     {
         objectWithScript = GameObject.FindWithTag("Player");
         movement = objectWithScript.GetComponent<Movement>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        edgeCollider = GetComponent<EdgeCollider2D>();
         objectRenderer = GetComponent<Renderer>();
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            Debug.Log("wow");
             if (movement != null)
             {
-                Debug.Log("nie jest pusty");
                 movement.AddJump();
             }
-            if (boxCollider != null)
+            if (edgeCollider != null)
             {
-                boxCollider.enabled = false;
+                edgeCollider.enabled = false;
             }
             if (objectRenderer != null)
             {
@@ -43,6 +41,6 @@ public class BonusJump : MonoBehaviour
     {
         yield return new WaitForSeconds(8);
         objectRenderer.enabled = true;
-        boxCollider.enabled = true;
+        edgeCollider.enabled = true;
     }
 }

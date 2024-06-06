@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
 
     private float dirX;
     private float wallDirection;
+    private bool canWallJump = true;
 
     [SerializeField] private LayerMask jumpableGround;    //Powiazane z warstwa Ground
     [SerializeField] private LayerMask jumpableWall;      //Powiazane z warstwa Wall
@@ -47,12 +48,13 @@ public class Movement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
-        if ((IsOnWallRight() || IsOnWallLeft()) && Input.GetButtonDown("Jump"))
+        if ((IsOnWallRight() || IsOnWallLeft()) && Input.GetButtonDown("Jump") && canWallJump)
         {
             isSliding = true;
             wallDirection = IsOnWallRight() ? -1f : 1f;
             jumpSound.Play();
-            rb.velocity = new Vector2(moveSpeed, jumpForce);
+            rb.velocity = new Vector2(wallDirection * moveSpeed, jumpForce);
+            canWallJump = false;
         }
 
         else if (IsOnWallRight() || IsOnWallLeft())
@@ -61,6 +63,13 @@ public class Movement : MonoBehaviour
             wallDirection = IsOnWallRight() ? -1f : 1f;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, - wallSlideSpeed));
         }
+
+        if (IsOnGround() || (!IsOnWallRight() && !IsOnWallLeft()))
+        {
+            isSliding = false;
+            canWallJump = true; 
+        }
+
         else
         {
             isSliding = false;
@@ -81,15 +90,10 @@ public class Movement : MonoBehaviour
         {
             return Physics2D.BoxCast(collide.bounds.center, collide.bounds.size, 0f, Vector2.right, .1f, jumpableWall);
         }
-    public void AddSpeed(float bonus)
-    {
-        moveSpeed += bonus;
-    }
+
     public void AddJump()
     {
         bonusJump++;
-        Debug.Log("dodano");
-        Debug.Log("bonusJump");
     }
 
     private void UpdateAnimationState()

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5917668435032194054}
   - component: {fileID: 5917668435032194073}
-  - component: {fileID: 5917668435032194072}
   - component: {fileID: 5917668435032194075}
+  - component: {fileID: 3627812699839958524}
   m_Layer: 0
   m_Name: Square (2)
   m_TagString: Untagged
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 5917668435032194074}
   m_LocalRotation: {x: -0, y: -0, z: -0.40305874, w: 0.9151741}
   m_LocalPosition: {x: -15.37, y: 5.08, z: 0}
-  m_LocalScale: {x: 0.34593, y: 0.34593, z: 0.34593}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0.023826122, b: 1, a: 1}
+  m_Sprite: {fileID: -1966853870, guid: c9987bbbe7f94ac4eb07c0079453a4b3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,32 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5917668435032194072
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5917668435032194074}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!114 &5917668435032194075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,3 +98,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bacd0cba625984d95224bd8592c201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!68 &3627812699839958524
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917668435032194074}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.1819007, y: 0.4298069}
+  - {x: -0.3281313, y: 0.33437237}
+  - {x: -0.3524921, y: -0.08080535}
+  - {x: -0.0061431825, y: -0.057318687}
+  - {x: -0.22125846, y: -0.4229139}
+  - {x: 0.07629216, y: -0.33609977}
+  - {x: 0.3609945, y: 0.05064145}
+  - {x: 0.29698375, y: 0.18556453}
+  - {x: 0.0036960617, y: 0.09740181}
+  - {x: 0.13079002, y: 0.42029712}
+  - {x: -0.17910045, y: 0.43049484}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
