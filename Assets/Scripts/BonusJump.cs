@@ -39,7 +39,7 @@ public class BonusJump : MonoBehaviour
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(5);
         objectRenderer.enabled = true;
         edgeCollider.enabled = true;
     }

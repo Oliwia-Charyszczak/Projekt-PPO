@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,8 @@ public class FinishLevel : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject leafParticlesPrefab;
+    [SerializeField] private TextMeshPro endText;
+    [SerializeField] private float fadeInDuration = 1.5f;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -16,6 +19,7 @@ public class FinishLevel : MonoBehaviour
             SpriteRenderer renderer = GetComponent<SpriteRenderer>();
             renderer.enabled = false;
             ShootLeafParticles();
+            StartCoroutine(ShowEndText());
             StartCoroutine(LoadOutLevel());
         }
 
@@ -23,6 +27,23 @@ public class FinishLevel : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
             SceneManager.LoadScene("Menu");
+        }
+
+        IEnumerator ShowEndText()
+        {
+            endText.gameObject.SetActive(true);
+
+            float elapsedTime = 0f;
+
+            while (elapsedTime < fadeInDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                float alpha = Mathf.Clamp01(elapsedTime / fadeInDuration);
+                endText.alpha = alpha;
+                yield return null;
+            }
+
+            endText.alpha = 1;
         }
 
         void ShootLeafParticles()
